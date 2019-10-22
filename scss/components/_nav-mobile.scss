@@ -1,0 +1,32 @@
+// mobile navigation
+
+#nav-mobile {
+  display: flex;
+  flex-direction: column;  
+
+  color: #999;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .3s ease-out;
+  
+  @at-root .nav-mobile__link {
+    transition: .075s linear;
+    @include py(1);    
+    &:hover, &.active { color: #000; }
+    &:first-child { @include pt(2); }
+    &:last-child { @include pb(2); }
+  }
+
+  @include responsive(md) { display: none; }
+}
+
+#toggle {
+  @include py(1);
+  color: #999;
+  border-bottom: 1px dotted #999;
+  border-top: 1px dotted #999;
+  &:hover { color: #000; }
+
+  @include responsive(md) { display: none; }
+}

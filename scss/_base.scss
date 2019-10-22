@@ -1,0 +1,69 @@
+// Base: contained within this file are all your 
+// resets, variables, mixins, and any utility classes.
+
+@function calc-rem($n) { @return 1rem * $n; }
+
+@mixin m($n)  { margin: calc-rem($n); };
+@mixin my($n) { margin-top: calc-rem($n); margin-bottom: calc-rem($n); };
+@mixin mx($n) { margin-left: calc-rem($n); margin-right: calc-rem($n); };
+@mixin mt($n) { margin-top: calc-rem($n); };
+@mixin ml($n) { margin-left: calc-rem($n); };
+@mixin mr($n) { margin-right: calc-rem($n); };
+@mixin mb($n) { margin-bottom: calc-rem($n); };
+
+@mixin p($n)  { padding: calc-rem($n); };
+@mixin py($n) { padding-top: calc-rem($n); padding-bottom: calc-rem($n); };
+@mixin px($n) { padding-left: calc-rem($n); padding-right: calc-rem($n); };
+@mixin pt($n) { padding-top: calc-rem($n); };
+@mixin pl($n) { padding-left: calc-rem($n); };
+@mixin pr($n) { padding-right: calc-rem($n); };
+@mixin pb($n) { padding-bottom: calc-rem($n); };
+
+
+@mixin responsive($key, $breakpoints: (
+  "sm": 500px,
+  "md": 750px,
+  "lg": 1000px
+)) { @media (min-width: map-get($breakpoints, $key)) { @content; } }
+
+// ====================
+// resets
+// ====================
+
+* { box-sizing: border-box; }
+
+body {
+  color: #000;
+  font-size: 1.125rem;
+  font-family: "Roboto Mono", monospace;
+  line-height: 1.4;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited { 
+  color: inherit;
+  cursor: pointer; 
+  text-decoration: none; 
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: transparent; 
+}
+
+// ====================
+// typography
+// ====================
+
+#nameplate {
+  font-size: 1.5rem;
+  letter-spacing: .5em;
+  @include my(1);
+  
+  @include responsive(sm) { white-space: nowrap; }
+}

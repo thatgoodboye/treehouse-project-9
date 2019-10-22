@@ -1,0 +1,26 @@
+.proj {
+  display: block;  
+
+  &:hover {
+    .proj__img { opacity: .8; }
+    .proj__title { color: #000; }
+  }
+ 
+  &__img {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #eee;
+    @include mb(.5); 
+    transition: .3s ease-out;
+  }
+
+  &__title {
+    @include m(0);
+    font-size: .8em;
+    text-align: center;
+    color: #999;
+    transition: .3s ease-out;
+  }
+}

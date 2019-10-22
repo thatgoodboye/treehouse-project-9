@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;  
+
+  &__label { 
+    font-size: .8em;
+    @include mb(1.5);
+    display: block;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    @include responsive(sm) { flex-direction: row; }
+  }
+
+  &__group {    
+    flex: 1 1 100%;
+    & + & { 
+      @include responsive(sm) { @include ml(1); }
+    }
+  }
+    
+  &__input { 
+    border: 1px solid #ddd;
+    background-color: #eee; 
+    display: block;
+    width: 100%;
+    @include px(1);
+    @include py(.75);
+    transition: .15s ease-out;
+    @include mb(.5);
+    
+    &:focus, &:active, &:hover {
+      background-color: transparent;
+    }
+  }
+}

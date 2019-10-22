@@ -1,0 +1,87 @@
+// Layout: contains all the CSS that handles the layout,
+// such as the container and any grid systems.
+
+.container {
+  display: flex;
+  flex-direction: column; 
+
+  margin: 0 auto;
+  @include px(2);
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100vh;
+
+  @include responsive(md) { @include px(4); }
+}
+
+#header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  border-bottom: 1px dotted #999;
+
+  @include responsive(md) { align-items: center; }
+  @include responsive(lg) { 
+    flex-direction: row;
+    justify-content: space-between; 
+  }
+}
+
+#main { 
+  @include py(2); 
+  flex: 1 1 100%; 
+
+  & .about {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    @include responsive(md) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__words {
+      @include responsive(md) { flex: 1 1 100%; }
+    }
+
+    &__img { 
+      flex: 0 0 auto;
+      display: block;
+      width: 300px;
+      height: 300px;
+      max-width: 100%;
+      border-radius: 50%;
+      @include mb(1);
+      @include responsive(md) {
+        @include mr(2);
+      }
+    }
+    &__title {
+      font-size: calc-rem(1.5);
+      @include m(0);
+      @include mb(1.5);
+    }
+  }
+}
+
+.grid {
+  gap: calc-rem(1);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+
+  @include responsive(sm) {
+    grid-template-columns: repeat(2, minmax(33%, 1fr)); }
+}
+
+#footer {
+  @include py(1.5);
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dotted #999;
+}

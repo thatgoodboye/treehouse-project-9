@@ -1,0 +1,27 @@
+// desktop navigation
+
+#nav-desktop {
+  display: none;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+
+  @include py(1);
+  @include responsive(md) { display: flex; }
+  
+  @at-root .nav-desktop__link {
+    transition: .075s linear;
+    &,
+    &:focus,
+    &:active,
+    &:visited { 
+      color: #999;
+      outline: none; 
+    }
+
+    &:hover,
+    &.active { color: #000; }
+
+    &:not(:first-child) { @include ml(3); }
+  }
+}

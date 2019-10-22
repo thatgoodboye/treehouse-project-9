@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="css/output.css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+
+    <title>JAKE TURK</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header">
+      
+        <nav id="nav-mobile" class="hidden">
+          <a class="nav-mobile__link" href="index.html">work</a>
+          <a class="nav-mobile__link" href="about.html">about</a>
+          <a class="nav-mobile__link active" href="contact.html">contact</a>
+        </nav>
+      
+        <button id="toggle" data-target="nav-mobile" type="button">menu</button>
+      
+        <h1 id="nameplate">JAKE TURK</h1>
+      
+        <nav id="nav-desktop">
+          <a class="nav-desktop__link" href="index.html">work</a>
+          <a class="nav-desktop__link" href="about.html">about</a>
+          <a class="nav-desktop__link active" href="contact.html">contact</a>
+        </nav>
+      
+      </header>
+      <main id="main">
+        <form class="contact">
+
+          <h2 class="contact__title">CONTACT</h2>
+          <p>Leave your name, email, and a message and I'll get back to you.</p>
+
+          <div class="form__row">
+            <div class="form__group">            
+              <input class="form__input" id="first-name" type="text" required>
+              <label class="form__label" for="first-name">First Name</label>
+            </div>
+            <div class="form__group">            
+              <input class="form__input" id="last-name" type="text" required>
+              <label class="form__label" for="last-name">First Name</label>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <input class="form__input" id="email" type="email" required>
+              <label class="form__label" for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__group">
+              <textarea class="form__input" id="message" style="resize:vertical;" rows="5" required></textarea>
+              <label class="form__label" for="message">Message</label>
+            </div>
+          </div>
+        </form>
+      </main>
+      <footer id="footer">
+        <a class="social" href="#"><img class="social__img" src="img/twitter.png"></a>
+        <a class="social" href="#"><img class="social__img" src="img/linkedin.png"></a>
+      </footer>
+    </div>
+
+    <!-- my javascript -->
+    <script type="text/javascript" src="scripts.js"></script>
+  </body>
+
+</html>

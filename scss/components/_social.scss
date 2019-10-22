@@ -1,0 +1,16 @@
+.social {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;  
+  transition: .15s ease-out;
+  &:not(:last-of-type) { @include mr(1); }
+
+  &:hover { transform: scale(1.2); }
+
+
+  &__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
