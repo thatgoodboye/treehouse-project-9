@@ -1,0 +1,18 @@
+.btn {
+  display: block;
+  background-color: $color-primary;
+  color: #fff;
+  font-weight: 600;
+  @include spacer("padding");
+  @include br();
+  width: 100%;
+
+  &-grey {
+    background-color: #bbb;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($color-primary, 10%);
+  }
+}

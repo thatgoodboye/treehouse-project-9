@@ -1,0 +1,117 @@
+body {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vw;
+  max-height: 100%;
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: max-content;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main";
+
+  @include media("md") {
+    grid-template-columns: max-content 1fr;
+    grid-auto-rows: max-content;
+    grid-template-areas:
+      "header header"
+      "nav main";
+  }
+
+  >header {
+    grid-area: header;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+
+    @include spacer("padding");
+  }
+
+  >nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darken($color-primary, 10%);
+
+    @include media("md") {
+      flex-direction: column;
+      justify-content: start;
+      @include spacer("padding", "y");
+    }
+  }
+
+  >main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: max-content;
+    grid-template-areas:
+      "header"
+      "traffic"
+      "daily"
+      "mobile"
+      "social"
+      "members"
+      "activity"
+      "message"
+      "settings";
+
+    @include media("md") {
+      grid-template-columns: 50% 50%;
+      grid-template-areas:
+        "header header"
+        "traffic traffic"
+        "daily mobile"
+        "social social"
+        "members activity"
+        "message settings";
+    }
+
+    >header {
+      grid-area: header;
+    }
+  }
+}
+
+@mixin section($name) {
+  &.#{$name} {
+    grid-area: $name;
+    @content;
+  }
+}
+
+section {
+  @include spacer("padding");
+
+  header {
+    @include spacer("padding", "y");
+  }
+
+  .body {
+    position: relative;
+    @include spacer("padding", "y");
+    @include spacer("margin", "x", auto);
+    width: 98%;
+  }
+
+  @include section(traffic) {}
+
+  @include section(daily) {}
+
+  @include section(mobile) {}
+
+  @include section(social) {}
+
+  @include section(members) {}
+
+  @include section(activity) {}
+
+  @include section(message) {}
+
+  @include section(settings) {}
+}

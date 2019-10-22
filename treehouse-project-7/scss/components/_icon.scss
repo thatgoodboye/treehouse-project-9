@@ -1,0 +1,40 @@
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  box-sizing: content-box;
+
+  &-small {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.roundy {
+    border-radius: 50%;
+  }
+
+}
+
+.bell {
+  transition: .2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: rotate(20deg);
+  }
+}
+
+.notif {
+  position: relative;
+  @include spacer("padding", $size: .25rem);
+}
+
+.notice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  width: .5rem;
+  height: .5rem;
+  background-color: $color-accent;
+}

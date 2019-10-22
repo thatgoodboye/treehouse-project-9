@@ -1,0 +1,10 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .input,
+  .btn {
+    max-width: 100%;
+    @include spacer("margin", "bottom");
+  }
+}

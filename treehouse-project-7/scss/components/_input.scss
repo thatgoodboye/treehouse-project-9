@@ -1,0 +1,18 @@
+@mixin input() {
+  width: 100%;
+  max-width: 400px;
+  border: 0.0625rem solid rgba(#000, 0.2);
+  color: inherit;
+  @include bg();
+  @include spacer("padding");
+  @include br();
+}
+
+.input {
+  @include input();
+
+  &-light {
+    @include input();
+    @include bg(#fff);
+  }
+}

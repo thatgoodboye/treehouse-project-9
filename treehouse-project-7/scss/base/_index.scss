@@ -1,0 +1,108 @@
+// ===============
+//  variables
+// ===============
+
+$color-primary: #7477bf;
+$color-accent: #81c98f;
+
+$color-border: rgba(#000, 0.2);
+$color-bg: #fafafa;
+
+// ===============
+// border helper mixin
+// ===============
+
+@mixin b($side: null, $style: 0.0625rem solid $color-border) {
+  @if $side==null {
+    border: $style;
+  }
+
+  @else {
+    border-#{$side}: $style;
+  }
+}
+
+// ===============
+// border radius
+// ===============
+
+@mixin br($rad: 0.375rem) {
+  border-radius: $rad;
+}
+
+// ===============
+// background color
+// ===============
+
+@mixin bg($color: $color-bg) {
+  background-color: $color !important;
+}
+
+// ===============
+// screen sizes
+// ===============
+
+@mixin media($size) {
+  @if $size=="sm" {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+
+  @else if $size=="md" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $size=="lg" {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+// ===============
+// spacing for padding and margin
+// ===============
+
+@mixin spacer($style, $side: null, $size: 1rem) {
+
+  @if $side==null {
+    #{$style}: $size;
+  }
+
+  @else {
+    @if $side=="x" {
+      @if $size=="auto" {
+        #{$style}-left: auto;
+        #{$style}-right: auto;
+      }
+
+      @else {
+        #{$style}-left: $size;
+        #{$style}-right: $size;
+      }
+    }
+
+    @else if $side=="y" {
+      #{$style}-top: $size;
+      #{$style}-bottom: $size;
+    }
+
+    @else {
+      #{$style}-#{$side}: $size;
+    }
+  }
+}
+
+@import "normalize";
+@import "reset";
+@import "helpers";
+@import "typography";

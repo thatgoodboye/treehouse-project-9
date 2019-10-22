@@ -1,0 +1,33 @@
+.member {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  @include spacer("padding");
+  font-size: .9em;
+
+  &:not(:last-of-type) {
+    @include b("bottom");
+    @include spacer("margin", "bottom");
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_name {
+    font-weight: 600;
+  }
+
+  &_arrow {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-primary;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

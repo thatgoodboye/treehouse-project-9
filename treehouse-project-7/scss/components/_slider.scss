@@ -1,0 +1,79 @@
+//  .switch
+//    input [checkbox]
+//    .plate
+//      .on
+//      .toggle
+
+$base: 1rem;
+$border: $base / 8;
+$pad: $base / 4;
+
+$switch: $base * 1.5;
+$plate: $switch * 3;
+
+$rad: ($switch + $pad * 2 + $border * 2) / 2;
+$transX: $plate - $switch - $pad * 2 - $border * 2;
+
+// the switch plate
+.toggle {
+  cursor: pointer;
+  position: relative;
+  font-size: $base;
+  font-weight: bold;
+
+  // hide the checkbox
+  input {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+
+    &:checked {
+      &~.plate {
+        background: #7477bf;
+
+        .on {
+          opacity: 1;
+        }
+
+        .switch {
+          transform: translateX($transX);
+        }
+      }
+    }
+  }
+
+  // face plate
+  .plate {
+    width: $plate;
+    border: $border solid #dadada;
+    padding: $pad;
+    position: relative;
+    background: #b2b2b2;
+    border-radius: $rad;
+
+    // insert "ON" indicator
+    .on {
+      top: 50%;
+      left: $pad + $border;
+      color: #fff;
+      opacity: 0;
+      position: absolute;
+      transform: translateY(-50%);
+      transition: 0.4s;
+    }
+
+    // draw the switch
+    .switch {
+      width: $switch;
+      height: $switch;
+      border: $border solid #dadada;
+      position: relative;
+      border-radius: 50%;
+      background-color: #fff;
+
+      transition: 0.4s;
+      -webkit-transition: 0.4s;
+    }
+  }
+}

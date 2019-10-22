@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  @include b();
+  @include br();
+  @include bg();
+  @include spacer("margin", "bottom");
+  @include spacer("padding");
+
+  @include media("md") {
+
+    &:not(:last-child) {
+      @include spacer("margin", "right");
+    }
+  }
+
+  &_badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    @include spacer("margin", "right");
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_name {
+    font-weight: 600;
+  }
+
+  &_stat {
+    font-size: 3rem;
+  }
+}

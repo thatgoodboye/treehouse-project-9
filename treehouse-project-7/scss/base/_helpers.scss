@@ -1,0 +1,36 @@
+// border helpers
+.b {
+  @include b();
+
+  &t {
+    @include b("top");
+  }
+
+  &l {
+    @include b("left");
+  }
+
+  &r {
+    @include b("right");
+
+    &-md {
+      border-right: none;
+
+      @include media("md") {
+        @include b("right");
+      }
+    }
+  }
+
+  &b {
+    @include b("bottom");
+  }
+}
+
+.bg {
+  @include bg();
+}
+
+.br {
+  @include br();
+}

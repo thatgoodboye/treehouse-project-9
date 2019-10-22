@@ -1,0 +1,43 @@
+.nav {
+  &-item {
+    box-sizing: content-box;
+    border: 0.25rem solid transparent;
+    opacity: 0.5;
+    transition: 0.2s ease-out;
+    padding: .75rem;
+    width: 2rem;
+    height: 2rem;
+
+    @include media("md") {
+      padding: .75rem 1.5rem;
+    }
+
+    &:hover,
+    &.active {
+      opacity: 1;
+      border-bottom-color: $color-accent;
+
+      @include media("md") {
+        border-bottom-color: transparent;
+        border-left-color: $color-accent;
+      }
+    }
+
+    &-pill {
+      border-radius: 2.5rem;
+      @include spacer("padding", $size: .75rem);
+      transition: .1s ease-out;
+
+      &:hover,
+      &.active {
+        color: #fff;
+        cursor: pointer;
+        background-color: $color-accent;
+      }
+
+      &.active {
+        @include spacer("margin", "x");
+      }
+    }
+  }
+}

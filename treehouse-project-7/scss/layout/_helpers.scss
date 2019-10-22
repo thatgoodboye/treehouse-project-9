@@ -1,0 +1,176 @@
+// display helpers
+.d {
+  &-block {
+    display: block;
+
+    &-md {
+      display: none;
+
+      @include media("md") {
+        display: block;
+      }
+    }
+  }
+
+  &-flex {
+    display: flex;
+
+    &.row {
+      flex-direction: row;
+
+      &-md {
+        @include media("md") {
+          flex-direction: row !important;
+        }
+      }
+    }
+
+    &.col {
+      flex-direction: column;
+    }
+
+    &.wrap {
+      flex-wrap: wrap;
+    }
+
+    &.nowrap {
+      flex-wrap: nowrap;
+    }
+
+    &.jc {
+      &-end {
+        justify-content: end;
+      }
+
+      &-start {
+        justify-content: start;
+      }
+
+      &-center {
+        justify-content: center;
+      }
+
+      &-between {
+        justify-content: space-between;
+      }
+    }
+
+    &.ai {
+      &-center {
+        align-items: center;
+      }
+
+      &-stretch {
+        align-items: stretch;
+      }
+
+      &-start {
+        align-items: start;
+      }
+    }
+
+  }
+}
+
+.fill {
+  flex: 1 0;
+}
+
+//  @mixin spacer
+//    @param $style [required]
+//    @param $side : null
+//    @param $size : 0.75rem
+
+// padding helpers
+.p {
+  @include spacer("padding");
+
+  &x {
+    @include spacer("padding", "x");
+  }
+
+  &y {
+    @include spacer("padding", "y");
+  }
+
+  &t {
+    @include spacer("padding", "top");
+  }
+
+  &l {
+    @include spacer("padding", "left");
+  }
+
+  &r {
+    @include spacer("padding", "right");
+  }
+
+  &b {
+    @include spacer("padding", "bottom");
+  }
+}
+
+// margin helpers
+.m {
+  @include spacer("margin");
+
+  &x {
+    @include spacer("margin", "x");
+
+    &-auto {
+      @include spacer("margin", "x", auto);
+    }
+  }
+
+  &y {
+    @include spacer("margin", "y");
+  }
+
+  &t {
+    @include spacer("margin", "top");
+  }
+
+  &l {
+    @include spacer("margin", "left");
+
+    &-auto {
+      @include spacer("margin", "left", auto);
+    }
+  }
+
+  &r {
+    @include spacer("margin", "right");
+
+    &-auto {
+      @include spacer("margin", "right", auto);
+    }
+
+    &-md {
+      @include media("md") {
+        @include spacer("margin", "right");
+      }
+    }
+  }
+
+  &b {
+    @include spacer("padding", "bottom");
+  }
+}
+
+// border
+.b {
+  @include b();
+  @include b("top");
+  @include b("left");
+  @include b("right");
+  @include b("bottom");
+}
+
+// stretching helpers
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}

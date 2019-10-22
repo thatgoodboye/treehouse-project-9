@@ -1,0 +1,13 @@
+.alert {
+  &_box {
+    color: #fff;
+    background-color: $color-primary;
+    @include spacer("padding");
+    @include br();
+  }
+
+  &_cross {
+    color: #fff;
+    font-size: 1.25rem;
+  }
+}
